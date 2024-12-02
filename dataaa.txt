@@ -1,0 +1,533 @@
+#1 empty dataframe
+df = data.frame(Ints=integer(),
+                Doubles=double(),
+                Characters=character(),
+                Logicals=logical(),
+                Factors=factor(),
+                stringsAsFactors = FALSE)
+print("Structure of the empty dataframe:")
+print(str(df))
+
+
+#2 student info display
+name = c('Anastasia','Dima','Katherine','james',
+         'Emily','Michael','Matthew','Laura',
+         'Kevin','jonas')
+score = c(12.5,9,16.5,12,9,20,14.5,13.5,8,19)
+attempts = c(1,3,2,3,2,3,1,1,2,1)
+qualify = c('yes','no','yes','no','no','yes','yes','no','no','yes')
+
+print("Original Data Frame:")
+print(name)
+print(score)
+print(attempts)
+print(qualify)
+df = data.frame(name, score, attempts, qualify)
+print(df)
+
+
+#3 Displaying the Structure of a Data Frame
+exam_data = data.frame(
+  name = c('Anastasia','Dima','Katherine','james',
+           'Emily','Michael','Matthew','Laura',
+           'Kevin','jonas')
+  score = c(12.5,9,16.5,12,9,20,14.5,13.5,8,19),
+  attempts = c(1,3,2,3,2,3,1,1,2,1),
+  qualify = c('yes','no','yes','no','no','yes','yes','no','no','yes')
+)
+print("Original Data Frame:")
+print(exam_data)
+print("Structure of the said data Frame:")
+print(str(exam_data))
+
+
+#4 Statistical Summary of a Data Frame
+exam_data = data.frame(
+  name = c('Anastasia','Dima','Katherine','james',
+           'Emily','Michael','Matthew','Laura',
+           'Kevin','jonas'),
+  score = c(12.5,9,16.5,12,9,20,14.5,13.5,8,19),
+  attempts = c(1,3,2,3,2,3,1,1,2,1),
+  qualify = c('yes','no','yes','no','no','yes','yes','no','no','yes')
+)
+print("Original Data Frame:")
+print(exam_data)
+print("Statistical Summary And Nature of the data of the said Given Data Frame :")
+print(summary(exam_data))
+
+
+#5 Extracting Specific Columns from a Data Frame
+exam_data = data.frame(
+  name = c('Anastasia','Dima','Katherine','james',
+           'Emily','Michael','Matthew','Laura',
+           'Kevin','jonas'),
+  score = c(12.5,9,16.5,12,9,20,14.5,13.5,8,19),
+  attempts = c(1,3,2,3,2,3,1,1,2,1),
+  qualify = c('yes','no','yes','no','no','yes','yes','no','no','yes')
+)
+print("Original Data Frame:")
+print(exam_data)
+print("Extract Specific column :")
+result <- data.frame(exam_data$name,exam_data$score)
+print(result)
+
+
+#6 Extracting the First Two Rows from a Data Frame
+exam_data = data.frame(
+  name = c('Anastasia','Dima','Katherine','james',
+           'Emily','Michael','Matthew','Laura',
+           'Kevin','jonas'),
+  score = c(12.5,9,16.5,12,9,20,14.5,13.5,8,19),
+  attempts = c(1,3,2,3,2,3,1,1,2,1),
+  qualify = c('yes','no','yes','no','no','yes','yes','no','no','yes')
+)
+print("Original Data Frame:")
+print(exam_data)
+print("Extract first two rows :")
+result = exam_data[1:2,]
+print(result)
+
+
+#7 Extracting Specific Rows and Columns from a Data Frame
+exam_data = data.frame(
+  name = c('Anastasia','Dima','Katherine','james',
+           'Emily','Michael','Matthew','Laura',
+           'Kevin','jonas'),
+  score = c(12.5,9,16.5,12,9,20,14.5,13.5,8,19),
+  attempts = c(1,3,2,3,2,3,1,1,2,1),
+  qualify = c('yes','no','yes','no','no','yes','yes','no','no','yes')
+  
+)
+print("Original Data Frame:")
+print(exam_data)
+print("extract 3rd and 5th rows with 1st and 3rd columns :")
+result = exam_data[c(3,5),c(1,3)]
+print(result)
+
+
+#8 Adding a New Column to a Data Frame
+exam_data = data.frame(
+  name = c('Anastasia','Dima','Katherine','james',
+           'Emily','Michael','Matthew','Laura',
+           'Kevin','jonas'),
+  score = c(12.5,9,16.5,12,9,20,14.5,13.5,8,19),
+  attempts = c(1,3,2,3,2,3,1,1,2,1),
+  qualify = c('yes','no','yes','no','no','yes','yes','no','no','yes')
+  
+)
+print("Original Data Frame:")
+print(exam_data)
+print("New data frame after adding the 'country' column :")
+exam_data$country = c("USA","France","USA","USA","USA","USA","USA","USA","USA","USA")
+print(exam_data)	
+
+
+#9 Creating a New Data Frame
+exam_data = data.frame(
+  name = c('Anastasia','Dima','Katherine','james',
+           'Emily','Michael','Matthew','Laura',
+           'Kevin','jonas'),
+  score = c(12.5,9,16.5,12,9,20,14.5,13.5,8,19),
+  attempts = c(1,3,2,3,2,3,1,1,2,1),
+  qualify = c('yes','no','yes','no','no','yes','yes','no','no','yes')
+  
+)
+print("Original Data Frame:")
+print(exam_data)
+new_exam_data = data.frame(
+  name = c('Robert','sophia'),
+  score = c(10.5,9),
+  attempts = c(1,3),
+  qualify = c('yes','no')
+)
+
+
+#10 Removing Specific Columns from a Data Frame
+exam_data = data.frame(
+  name = c('Anastasia','Dima','Katherine','james',
+           'Emily','Michael','Matthew','Laura',
+           'Kevin','jonas'),
+  score = c(12.5,9,16.5,12,9,20,14.5,13.5,8,19),
+  attempts = c(1,3,2,3,2,3,1,1,2,1),
+  qualify = c('yes','no','yes','no','no','yes','yes','no','no','yes')
+  
+)
+print("Original Data Frame:")
+print(exam_data)
+exam_data = subset(exam_data,select = -c(name, qualify))
+print(exam_data)
+
+
+#11 Removing Specific Rows
+exam_data = data.frame(
+  name = c('Anastasia','Dima','Katherine','james',
+           'Emily','Michael','Matthew','Laura',
+           'Kevin','jonas'),
+  score = c(12.5,9,16.5,12,9,20,14.5,13.5,8,19),
+  attempts = c(1,3,2,3,2,3,1,1,2,1),
+  qualify = c('yes','no','yes','no','no','yes','yes','no','no','yes')
+)
+print("Original Data Frame:")
+print(exam_data)
+exam_data <- exam_data[-c(2, 4, 6),]
+print(exam_data)
+
+
+#12 Sorting a Data Frame by Multiple Columns
+exam_data = data.frame(
+  name = c('Anastasia','Dima','Katherine','james',
+           'Emily','Michael','Matthew','Laura',
+           'Kevin','jonas'),
+  score = c(12.5,9,16.5,12,9,20,14.5,13.5,8,19),
+  attempts = c(1,3,2,3,2,3,1,1,2,1),
+  qualify = c('yes','no','yes','no','no','yes','yes','no','no','yes')
+)
+print("Original Data Frame:")
+print(exam_data)
+print("dataframe after sorting 'name' and 'score' columns:");
+exam_data = exam_data[with(exam_data, order(name, score)), ]
+View(exam_data)
+
+
+#13 Performing Various Types of Joins on Data Frames
+df1 = data.frame(numid = c(12, 14, 10, 11))
+df2 = data.frame(numid = c(13, 15, 11, 12))
+print("Left Outer join:")
+result = merge(df1, df2, by = "numid", all.x = TRUE)
+print(result)
+print("Right Outer join:")
+result = merge(df1, df2, by = "numid", all.y = TRUE)
+print(result)
+print("Outer join:")
+result = merge(df1, df2, by = "numid", all = TRUE)
+print(result)
+print("Cross join:")
+result = merge(df1, df2, by = NULL)
+print(result)
+
+
+#14 Replacing NA Values in a Data Frame with a Specific Value
+exam_data = data.frame(
+  name = c('Anastasia','Dima','Katherine','james',
+           'Emily','Michael','Matthew','Laura',
+           'Kevin','jonas'),
+  score = c(12.5,9,16.5,12,9,20,14.5,13.5,8,19),
+  attempts = c(1,NA,2,NA,2,NA,1,NA,2,NA),
+  qualify = c('yes','no','yes','no','no','yes','yes','no','no','yes')
+)
+print("Original Data Frame:")
+print(exam_data)
+exam_data[is.na(exam_data)] = 3
+print("Ater removing NA with 3, the said dataframe become:")
+View(exam_data)
+
+
+#15 Renaming a Column
+exam_data = data.frame(
+  name = c('Anastasia','Dima','Katherine','james',
+           'Emily','Michael','Matthew','Laura',
+           'Kevin','jonas'),
+  score = c(12.5,9,16.5,12,9,20,14.5,13.5,8,19),
+  attempts = c(1,NA,2,NA,2,NA,1,NA,2,NA),
+  qualify = c('yes','no','yes','no','no','yes','yes','no','no','yes')
+)
+print("Original Data Frame:")
+print(exam_data)
+print("Change column-name 'name' to 'student_name' of the said dataframe:")
+colnames(exam_data)[which(names(exam_data) == "name")] = "student_name"
+print(exam_data)
+
+
+#16 Selecting Random Rows
+exam_data = data.frame(
+  name = c('Anastasia','Dima','Katherine','james',
+           'Emily','Michael','Matthew','Laura',
+           'Kevin','jonas'),
+  score = c(12.5,9,16.5,12,9,20,14.5,13.5,8,19),
+  attempts = c(1,3,2,3,2,3,1,1,2,1),
+  qualify = c('yes','no','yes','no','no','yes','yes','no','no','yes')
+)
+print("Original Data Frame:")
+print(exam_data)
+print("select three random rows of the said dataframe:")
+print(exam_data[sample(nrow(exam_data),3 ),])
+
+
+#17 Reordering Columns in a Data Frame
+exam_data = data.frame(
+  name = c('Anastasia','Dima','Katherine','james',
+           'Emily','Michael','Matthew','Laura',
+           'Kevin','jonas'),
+  score = c(12.5,9,16.5,12,9,20,14.5,13.5,8,19),
+  attempts = c(1,3,2,3,2,3,1,1,2,1),
+  qualify = c('yes','no','yes','no','no','yes','yes','no','no','yes')
+)
+print("Original Data Frame:")
+print(exam_data)
+print("Reorder by column name:")
+exam_data = exam_data[c("name","attempts","score","qualify")]
+print(exam_data)
+
+
+#18 Differences Between Two Data Frames
+df_90 = data.frame(
+  "item" = c("item1","item2","item3"),
+  "Jan_sale" = c(12, 14, 12),
+  "Feb_sale" = c(11, 12, 15),
+  "mar_sale" = c(12, 14, 15)
+)
+df_91 = data.frame(
+  "item" = c("item1","item2","item3"),
+  "Jan_sale" = c(12, 14, 12),
+  "Feb_sale" = c(11, 12, 15),
+  "mar_sale" = c(12, 14, 18)
+)
+print("Original Data Frame:")
+print(df_90)
+print(df_91)
+print("Row(s) in first data frame that are not present in second data frame:")
+print(setdiff(df_90,df_91))
+
+
+#19 Intersection and Union of Two Vectors
+a = c("a","b","c","d","e")
+b = c("d","e","f","g")
+print("Original Data Frame:")
+print(a)
+print(b)
+print("Element which are present in which dataframe:")
+result = intersect(a,b)
+print(result)
+result = union(a,b)
+print(result)
+
+
+#20 Z-Score Normalization
+data <- c(10,20,30,40,50)
+print(data)
+z_score_normalized <- scale(data)
+print(z_score_normalized)
+
+
+#21 Z-Score Normalization for a Numeric Vector
+data <- c(10,20,30,40,50)
+print(data)
+z_score_normalized <- scale(data)
+print(z_score_normalized)
+
+
+#22 Min-Max Normalization to a Numeric Vector
+data <- c(10,20,30,40,50)
+min_max_normalize <- function(x) {
+  return ((x - min(x)) / (max(x) - min(x)))
+}
+min_max_normalized <- min_max_normalize(data)
+print(min_max_normalized)
+
+
+#23 Range Normalization
+data <- c(10,20,30,40,50)
+range_normalize <- function(x,a,b) {
+  return (a + ((x - min(x)) * (b - a) / (max(x) - min(x))))
+}
+range_normalize <- range_normalize(data,0,5)
+print(range_normalize)
+
+
+#24 Decimal Scaling Normalization
+data <- c(10,20,30,40,50)
+print(data)
+decimal_scaling_normalize <- function(x) {
+  j <- ceiling(log10(max(abs(x))))
+  return (x / 10^j)
+}
+decimal_scaling_normalized <- decimal_scaling_normalize(data)
+print(decimal_scaling_normalized)
+
+
+#25 Max-Abs Normalization
+data <- c(10,20,30,40,50)
+max_abs_scaling <- function(x) {
+  return (x / max(abs(x)))
+}
+max_abs_normalized <- max_abs_scaling(data)
+print(max_abs_normalized)
+
+
+#26 Count Null Values
+s=sum(is.na(data))
+print(paste("Sum of null values is", s))
+print("Sum of null values is", s)
+print(s)
+print(is.na(data))
+a=na.exclude(data)
+print(a)
+print(data)
+
+
+#27 Replace The Null Values
+data$Height[is.na(data$Height)] <- mean(data$Height,na.rm=T)
+data$Weight[is.na(data$Weight)] <- mean(data$Weight,na.rm=T)
+print(paste("Relace the nuyll values with mean", data))
+
+
+#28 Replace The Null Values with median
+data$Height[is.na(data$Height)] <- median(data$Height,na.rm=T)
+data$Weight[is.na(data$Weight)] <- median(data$Weight,na.rm=T)
+print(paste("Relace the nuyll values with median", data))
+
+
+#29 Loading and Exploring a CSV File
+data=read.csv("Z:\\BSC IT SEM-5\\Data Mining\\25_Data.CSV")
+summary(data)
+data=read.csv("Z:\\BSC IT SEM-5\\Data Mining\\25_Data.CSV")
+str(data)
+data=read.csv("Z:\\BSC IT SEM-5\\Data Mining\\25_Data.CSV")
+dim(data)
+data=read.csv("Z:\\BSC IT SEM-5\\Data Mining\\25_Data.CSV")
+View(data)
+
+
+#30 Handling NaN (Not a Number) Values
+result <- 0 / 0
+print(result)
+x=c(1,2,NaN,3,NaN)
+is.nan(x)
+
+
+#31 Creating and Displaying a Data Frame
+data <- data.frame(
+	ID = 1:10,
+	Age = c(25,30,NA,22,45,33,27,NA,29,35),
+	Salary = c(50000,60000,55000,NA,80000,50000,40000,60000,70000,NA)
+)
+print("original Dat:")
+print(data)
+x<-data
+print(x)
+
+
+#32 Calculating IQR and Outlier Boundaries
+Q1 <- quantile(x,0.25,na.rm=T)
+Q3 <- quantile(x,0.25,na.rm=T)
+print(Q1)
+print(Q3)
+IQR <- Q3 - Q1
+lower_bound <- Q1 - 1.5*IQR
+upper_bound <- Q1 - 1.5*IQR
+print(lower_bound)
+print(upper_bound)
+
+
+#33 Identifying and Handling Outliers
+outliners <- data$Salary[data$Salary < lower_bound | data$Salary < upper_bound]
+print(outliners)
+print(data)
+data$Salary_clean <- ifelse(data$Salary %in% outliners, NA, outliners)
+print(data$Salary_clean)
+print(data)
+
+
+#34 Principal Component Analysis (PCA)
+library(datasets)
+library(ggplot2)
+#load the iris dataset
+data(iris)
+#remove the species column (non-numeric)for pca
+iris_data <- iris[,1:4]
+print(iris_data)
+# step 1: Standarzide the data (centering and scaling)
+iris_scaled <- scale(iris_data)
+print(iris_scaled)
+#step 2: compute the convariance matrix
+cov_matrix <- cov(iris_scaled)
+print(cov_matrix)
+#step 3: Compute the Eigenvalues and Eigenvectors
+eigen_values <- eigen(cov_matrix)$values
+eigen_vectors <- eigen(cov_matrix)$vectors
+#step 4: Cal pricipal Componets
+pca_result <- prcomp(iris_scaled)
+#step 5: Summary for pca
+summary(pca_result)
+#step 6: Biplot of pca (showing pc1 and pc2)
+biplot(pca_result, scale =  0)
+#step 7: Explaind variance by each pricipal component
+explained_variance <- pca_result$sdev^2 / sum(pca_result$sdev^2) * 100
+print(explained_variance)
+
+
+#35 library
+library(datasets)
+library(ggplot2)
+
+
+#36 Decision Tree Model on Iris Dataset
+#iris data
+iris
+#sample
+sample = sample(150,100)
+print(sample)
+#training data
+training_data = iris[sample,]
+#testing data
+testing_data = iris[-sample,]
+#dimension of training and testing data
+dim(training_data)
+dim(testing_data)
+#find branches
+dtm <- rpart(Species~ Sepal.Length+Sepal.Width+Petal.Length+Petal.Width,data = training_data,method = "class")
+dtm
+#plot deciosn tree with all internal nodes
+plot(dtm)
+text(dtm)
+rpart.plot(dtm)
+rpart.plot(dtm,type = 4,extra = 101)
+#it shows prediction for future
+predict = predict(dtm,testing_data,type = "class")
+#prediction values are in tabular format
+table(testing_data[,5],predict)
+mean(testing_data[,5]==predict)
+
+
+#37  Association Rules
+# Loading Libraries
+install.packages('arules')
+library(arules)
+library(arulesViz)
+library(RColorBrewer)
+# import dataset
+data("Groceries")
+# using apriori() function
+rules <- apriori(Groceries, 
+                 parameter = list(supp = 0.01, conf = 0.2))
+# using inspect() function
+inspect(rules[1:10])
+# using itemFrequencyPlot() function
+arules::itemFrequencyPlot(Groceries, topN = 20, 
+                          col = brewer.pal(8, 'Pastel2'),
+                          main = 'Relative Item Frequency Plot',
+                          type = "relative",
+                          ylab = "Item Frequency (Relative)")
+
+#38 regrassion
+library(ggplot2)
+library(caTools)
+data=read.csv("Z:\\BSC IT SEM-5\\Data Mining\\39 Car Price.CSV")
+print(data)
+data=data.frame(
+  data2$horsepower,
+  data2$price
+)
+sum(is.na(data))
+names(data)
+plot(data$data2.horsepower,data$data2.pricce,
+     xlab="Horse Power",
+     ylab="price",
+     main="scatter plot of years hourse power vs price")
+split=sample.split(data,splitRatio = 7.0)
+train_data=subset(data,spilt==TRUE)
+train_data=subset(data,spilt==FALSE)
+lmr=lm(formula=data2.price~data2.horsepower,data=train_data)
+coef(lmr)
+ypred=predict(lmr,newdata=test_data)
+ypred2=predict(lmr,newdata=test_data)

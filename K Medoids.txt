@@ -1,0 +1,27 @@
+# Load required libraries
+library(cluster)  # for pam (Partitioning Around Medoids)
+library(datasets)  # for iris dataset
+
+# Load the Iris dataset
+data(iris)
+
+# Using only numeric data for clustering
+iris_data <- iris[, 1:4]
+
+# Perform K-Medoids clustering (k = 3 clusters)
+set.seed(42)
+kmedoids_result <- pam(iris_data, k = 3)
+
+# Print cluster assignment
+print(kmedoids_result)
+
+# Visualizing the clusters using the first two principal components
+library(ggplot2)
+iris_pca <- prcomp(iris_data)
+pca_data <- as.data.frame(iris_pca$x)
+pca_data$Cluster <- as.factor(kmedoids_result$clustering)
+
+ggplot(pca_data, aes(x = PC1, y = PC2, color = Cluster)) +
+  geom_point() +
+  labs(title = "K-Medoids Clustering (3 clusters)", x = "Principal Component 1", y = "Principal Component 2") +
+  theme_minimal()

@@ -1,0 +1,22 @@
+# Load required libraries
+library(class)  # for knn function
+library(datasets)  # for iris dataset
+
+# Load the Iris dataset
+data(iris)
+
+# Split data into training and testing sets
+set.seed(42)
+sample_index <- sample(1:nrow(iris), 0.7 * nrow(iris))  # 70% training data
+train_data <- iris[sample_index, ]
+test_data <- iris[-sample_index, ]
+
+# KNN classification (using k = 3)
+knn_pred <- knn(train = train_data[, 1:4], test = test_data[, 1:4], cl = train_data$Species, k = 3)
+
+# Compare predictions with actual values
+print(table(test_data$Species, knn_pred))
+
+# Calculate accuracy
+accuracy <- sum(test_data$Species == knn_pred) / nrow(test_data)
+print(paste("Accuracy: ", round(accuracy * 100, 2), "%"))
